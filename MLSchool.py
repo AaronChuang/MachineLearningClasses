@@ -144,7 +144,7 @@ class MLSchool:
                 return False
         return True
 
-    def PLA(self):
+    def perceptron_learning_algorithm(self):
         print('pla execute - '+str(MLSchool.calculate_times) + ',' +str(MLSchool.function_const))
         if MLSchool.target_function_vector is None:
             MLSchool.target_function_vector = self.points[0].vector().normalization()
@@ -156,7 +156,7 @@ class MLSchool:
                 MLSchool.target_function_vector = MLSchool.target_function_vector\
                     .addition(self.points[i].vector())\
                     .normalization()
-                self.PLA()
+                self.perceptron_learning_algorithm()
                 break
 
     def check(self, group):
@@ -171,7 +171,7 @@ class MLSchool:
 
 school = MLSchool()
 school.init_data()
-school.PLA()
+school.perceptron_learning_algorithm()
 school.check(school.group1_points)
 print("done - execute times:"+str(MLSchool.calculate_times))
 print("done - function_const:" + str(MLSchool.function_const))
